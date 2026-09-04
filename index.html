@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        try {
+          var originalFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return originalFetch;
+            },
+            set: function(val) {
+              originalFetch = val;
+            }
+          });
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr NGUETSOP Jessica - Chirurgie Générale & Cœlioscopie</title>
+    <meta name="description" content="Cabinet médical du Dr NGUETSOP Jessica, spécialiste en chirurgie générale, viscérale et cœlioscopique. Consultations et interventions de pointe." />
+    <meta property="og:title" content="Dr NGUETSOP Jessica - Chirurgie Générale & Cœlioscopie" />
+    <meta property="og:description" content="Cabinet médical du Dr NGUETSOP Jessica, spécialiste en chirurgie générale, viscérale et cœlioscopique. Consultations et interventions de pointe." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
